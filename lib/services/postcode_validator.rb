@@ -5,7 +5,6 @@ require 'net/http'
 class PostcodeValidator
   POSTCODES_IO_BASE_URL = 'https://api.postcodes.io'
   LSOA_WHITELIST = %w[Southwark Lambeth].freeze
-  POSTCODE_WHITELIST = %w[sh241aa sh241ab].freeze
 
   attr_reader :postcode
 
@@ -24,10 +23,11 @@ class PostcodeValidator
   end
 
   def whitelisted_postcode?
-    POSTCODE_WHITELIST.include?(@postcode)
+    WhitelistedPostcode.where(postcode: @postcode).exists?
   end
 
   def fetch_postcode_details
+    Rails.logger.info("Querying API")
     uri = URI(POSTCODES_IO_BASE_URL)
     uri.path = "/postcodes/#{@postcode}"
     response = Net::HTTP.get_response(uri)

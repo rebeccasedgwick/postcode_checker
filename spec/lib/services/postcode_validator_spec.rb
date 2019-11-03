@@ -44,7 +44,7 @@ RSpec.describe PostcodeValidator do
 
   describe '#whitelisted_postcode??' do
     before do
-      stub_const('PostcodeValidator::POSTCODE_WHITELIST', %w[se13gb sh241aa])
+      WhitelistedPostcode.create!(postcode: 'se13gb')
     end
 
     it 'returns true if the postcode is whitelisted' do
