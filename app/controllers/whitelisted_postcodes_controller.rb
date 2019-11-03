@@ -1,13 +1,10 @@
 # frozen_string_literal: true
 
 class WhitelistedPostcodesController < ApplicationController
-  before_action :find_whitelisted_postcode, only: [:edit, :update, :destroy]
+  before_action :find_whitelisted_postcode, only: %i[edit update destroy]
 
   def index
     @whitelisted_postcodes = WhitelistedPostcode.all.order(:postcode)
-  end
-
-  def new
   end
 
   def create
@@ -17,9 +14,6 @@ class WhitelistedPostcodesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit
   end
 
   def update
@@ -36,6 +30,7 @@ class WhitelistedPostcodesController < ApplicationController
   end
 
   private
+
   def whitelisted_postcode_params
     params.require(:whitelisted_postcode).permit(:postcode)
   end

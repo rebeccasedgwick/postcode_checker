@@ -1,0 +1,14 @@
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'bin/*'
+
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 130
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'

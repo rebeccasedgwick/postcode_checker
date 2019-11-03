@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.feature 'Administrate the postcode whitelist', type: :feature do
-
   context 'when a given postcode is already whitelisted' do
     before do
       WhitelistedPostcode.create!(postcode: 'SH24 1AA')

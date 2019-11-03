@@ -27,16 +27,18 @@ class PostcodeValidator
   end
 
   def fetch_postcode_details
-    Rails.logger.info("Querying API")
+    Rails.logger.info('Querying API')
     uri = URI(POSTCODES_IO_BASE_URL)
     uri.path = "/postcodes/#{@postcode}"
     response = Net::HTTP.get_response(uri)
     return unless response.is_a?(Net::HTTPSuccess)
+
     JSON.parse(response.body)
   end
 
   def whitelisted_lsoa?(lsoa)
     return false if lsoa.nil?
+
     LSOA_WHITELIST.any? { |whitelisted_lsoa| lsoa.include?(whitelisted_lsoa) }
   end
 end

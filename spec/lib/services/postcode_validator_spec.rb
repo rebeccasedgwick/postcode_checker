@@ -41,7 +41,7 @@ RSpec.describe PostcodeValidator do
     end
 
     it 'returns false if the postcode is not found by API' do
-        VCR.use_cassette('postcodes-io-invalid') do
+      VCR.use_cassette('postcodes-io-invalid') do
         expect(subject_invalid_postcode.valid?).to eq(false)
       end
     end
@@ -78,7 +78,7 @@ RSpec.describe PostcodeValidator do
 
   describe '#whitelisted_lsoa?' do
     before do
-      stub_const('PostcodeValidator::LSOA_WHITELIST', ['Lambeth', 'Southwark'])
+      stub_const('PostcodeValidator::LSOA_WHITELIST', %w[Lambeth Southwark])
     end
     it 'returns true if LSOA is whitelisted' do
       expect(subject_whitelisted_lsoa.whitelisted_lsoa?('Southwark

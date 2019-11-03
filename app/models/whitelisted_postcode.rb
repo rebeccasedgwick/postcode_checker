@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class WhitelistedPostcode < ApplicationRecord
   before_validation :normalise_postcode
   validates :postcode, presence: true, uniqueness: true

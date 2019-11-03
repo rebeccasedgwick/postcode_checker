@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe WhitelistedPostcode, type: :model do
   it 'can be created' do
-    expect{ WhitelistedPostcode.create(postcode: 'sh241aa') }.to change(WhitelistedPostcode, :count).by(1)
+    expect { WhitelistedPostcode.create(postcode: 'sh241aa') }.to change(WhitelistedPostcode, :count).by(1)
   end
 
   context 'on save' do
