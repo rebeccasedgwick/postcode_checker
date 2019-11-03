@@ -1,0 +1,17 @@
+<h1>Edit whitelisted postcode</h1>
+
+<% if @whitelisted_postcode.errors.present? %>
+  <%= @whitelisted_postcode.errors.full_messages.join(", ") %>
+<% end %>
+
+<%= form_with model: @whitelisted_postcode, local: true do |form| %>
+  <p>
+    <%= form.label :postcode, 'Postcode:' %>
+    <%= form.text_field :postcode %>
+  </p>
+  <p>
+    <%= form.submit 'Edit postcode' %>
+  </p>
+<% end %>
+
+<p><%= link_to 'View whitelisted postcodes', whitelisted_postcodes_path %></p>

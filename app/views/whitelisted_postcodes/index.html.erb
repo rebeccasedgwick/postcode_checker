@@ -1,0 +1,20 @@
+<h1>Whitelisted postcodes</h1>
+
+<table>
+  <thead>
+    <th>Postcode</th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @whitelisted_postcodes.each do |whitelisted_postcode| %>
+      <tr>
+        <td><%= whitelisted_postcode.postcode %></td>
+        <td><%= link_to 'Edit', edit_whitelisted_postcode_path(whitelisted_postcode) %></td>
+        <td><%= link_to 'Delete', whitelisted_postcode_path(whitelisted_postcode), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to 'Add new postcode', new_whitelisted_postcode_path %></p>

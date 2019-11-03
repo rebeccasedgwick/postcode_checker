@@ -15,5 +15,9 @@
     <% end %>
 
     <%= yield %>
+
+    <p><%= link_to 'Check a postcode', root_path %></p>
+    <p><%= link_to 'Whitelisted postcodes', whitelisted_postcodes_path %></p>
+
   </body>
 </html>
