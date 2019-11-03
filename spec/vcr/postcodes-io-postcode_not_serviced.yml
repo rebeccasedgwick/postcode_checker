@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.postcodes.io/postcodes/tr197aa
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.postcodes.io
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.14.0
+      Date:
+      - Sun, 03 Nov 2019 15:10:59 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '774'
+      Connection:
+      - keep-alive
+      X-Gnu:
+      - Michael J Blanchard
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - W/"306-AIk6KjgblG69TOtQxDk8gXl27Xg"
+    body:
+      encoding: UTF-8
+      string: '{"status":200,"result":{"postcode":"TR19 7AA","quality":1,"eastings":134340,"northings":25043,"country":"England","nhs_ha":"South
+        West","longitude":-5.713697,"latitude":50.066019,"european_electoral_region":"South
+        West","primary_care_trust":"Cornwall and Isles of Scilly","region":"South
+        West","lsoa":"Cornwall 069C","msoa":"Cornwall 069","incode":"7AA","outcode":"TR19","parliamentary_constituency":"St
+        Ives","admin_district":"Cornwall","parish":"Sennen","admin_county":null,"admin_ward":"St
+        Buryan","ced":null,"ccg":"NHS Kernow","nuts":"Cornwall and Isles of Scilly","codes":{"admin_district":"E06000052","admin_county":"E99999999","admin_ward":"E05009248","parish":"E04011521","parliamentary_constituency":"E14000964","ccg":"E38000089","ced":"E99999999","nuts":"UKK30"}}}'
+    http_version: 
+  recorded_at: Sun, 03 Nov 2019 15:10:59 GMT
+recorded_with: VCR 5.0.0
