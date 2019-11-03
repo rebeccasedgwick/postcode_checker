@@ -1,0 +1,9 @@
+<h1>Postcode Checker</h1>
+
+<%= form_tag(postcode_checker_validate_path, method: :get) do %>
+  <%= label_tag(:postcode, 'Postcode:') %>
+  <%= text_field_tag(:postcode, params[:postcode]) %>
+  <br><br>
+  <%= submit_tag('Check postcode') %>
+  <br><br>
+<% end %>
